@@ -19,3 +19,8 @@ if result == "longest"
 else
   puts "F"
 end
+
+
+def_delegator :flunk("def method_name
+	
+end"), :del_meth, :new_name
