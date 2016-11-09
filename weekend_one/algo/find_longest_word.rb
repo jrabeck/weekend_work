@@ -1,8 +1,43 @@
-# Complete the method called find_longest_word, which will accept a string as a parameter (usually a sentence), and return another string that will be the longest word in that sentence.
+# def find_longest_word(sentence)
+# 	@words_and_lengths = {}
+# 	words = sentence.split
+	
+# 	words.each do |word|
+		
+# 		@words_and_lengths[word] = word.length
+		
+# 	end
+# 	@words_and_lengths = @words_and_lengths.sort_by { |word, length| length }
+	
+# 	@words_and_lengths = @words_and_lengths.pop
+# 	@words_and_lengths[0]
+	
+# end
+
+
 
 def find_longest_word(sentence)
 
+	words = sentence.split
+
+	longest_word = {}
+	longest_word[:word] = ""
+	longest_word[:length] = 0
+
+	words.each do |word|
+		current_word_length  = word.length
+
+		if current_word_length > longest_word[:length]
+			longest_word[:length] = current_word_length
+			longest_word[:word] = word
+		end
+
+	end
+
+	return longest_word[:word]
+
 end
+
 
 # Driver code - don't touch anything below this line.
 puts "TESTING find_longest_word..."
@@ -19,8 +54,3 @@ if result == "longest"
 else
   puts "F"
 end
-
-
-def_delegator :flunk("def method_name
-	
-end"), :del_meth, :new_name
